@@ -1,0 +1,24 @@
+ <mat-accordion class="custom-panel" multi='true' *ngIf='courses.length > 0'>
+    <mat-card class="card-style" *ngFor='let course of courses'>
+        <mat-card-header class="card-title-style">
+            <mat-card-title ><h3>  {{ course.title }} </h3></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            {{ course.content }}
+        </mat-card-content>
+        <mat-card-actions class="card-actions-style">
+            <a mat-button color="primary" [routerLink]="['/explore', course.id]">Explore</a>
+        </mat-card-actions>
+    </mat-card>
+   <!-- <mat-expansion-panel *ngFor='let course of courses'>
+   <mat-expansion-panel-header>
+      {{ course.title }}
+    </mat-expansion-panel-header>
+    <p> {{ course.content }} </p>
+    <mat-action-row>
+      <a mat-button color="primary" [routerLink]="['/explore', course.id]">Explore</a>
+      <button mat-button color="warn" (click)="onDelete(course.id)">Delete</button>
+    </mat-action-row>
+   </mat-expansion-panel> -->
+ </mat-accordion>
+<p class='item-style mat-body-1' *ngIf='courses.length <= 0'>No Course Programs to show.</p>
