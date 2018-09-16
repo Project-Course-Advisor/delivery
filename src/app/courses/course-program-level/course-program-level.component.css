@@ -16,3 +16,7 @@
   text-align: center !important;
   display: inline;
 }
+
+mat-spinner{
+  margin: auto;
+}

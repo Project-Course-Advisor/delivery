@@ -17,14 +17,17 @@ export class CourseProgramLevel implements OnInit, OnDestroy {
   // ];
 
   courses: Course[] = [];
+  isLoading = false;
   private coursesSub: Subscription;
 
   constructor(public coursesService: CourseService) {}
 
   ngOnInit() {
     this.coursesService.getCourse();
+    this.isLoading = true;
     this.coursesSub = this.coursesService.getCourseUpdateListener()
       .subscribe((courses: Course[]) => {
+        this.isLoading = false;
         this.courses = courses;
     });
   }

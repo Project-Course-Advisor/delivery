@@ -7,3 +7,7 @@ h2 {
   text-align-last: center;
 }
 
+mat-spinner
+{
+  margin: auto;
+}

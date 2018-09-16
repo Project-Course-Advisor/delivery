@@ -16,16 +16,19 @@ export class CourseCreateComponent implements OnInit {
   private modes = 'explores';
   private courseId: string;
   course: Course;
+  isLoading = false;
   subcourse: Subcourse;
 
   constructor(public coursesService: CourseService, public route: ActivatedRoute) {}
 
   ngOnInit() {
+    this.isLoading = true;
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has('courseId')) {
           this.modes = 'explore';
           this.courseId = paramMap.get('courseId');
           this.course = this.coursesService.getCourseDetails(this.courseId);
+          this.isLoading = false;
       } else {
         this.modes = 'explores';
         this.courseId = null;
