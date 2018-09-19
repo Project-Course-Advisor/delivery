@@ -7,7 +7,9 @@ import { MatInputModule,
    MatButtonModule,
    MatToolbarModule,
    MatExpansionModule,
-   MatProgressSpinnerModule } from '@angular/material';
+   MatProgressSpinnerModule,
+   MatGridListModule,
+   MatDividerModule} from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -15,6 +17,8 @@ import { CourseCreateComponent } from './courses/course-details/course-details.c
 import {HeaderComponent } from './header/header.component';
 import { CourseProgramLevel } from './courses/course-program-level/course-program-level.component';
 import { AppRoutingModule } from './app.routing.module';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 
 @NgModule({
@@ -23,13 +27,17 @@ import { AppRoutingModule } from './app.routing.module';
     CourseCreateComponent,
     HeaderComponent,
     CourseProgramLevel,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatDividerModule,
     MatInputModule,
+    MatGridListModule,
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,

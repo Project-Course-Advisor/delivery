@@ -20,3 +20,16 @@
 mat-spinner{
   margin: auto;
 }
+
+.banner
+{
+  width: 100%;
+  margin: 0 0;
+  height: 20rem;
+}
+
+.img-banner
+{
+  height: 100%;
+  width: 100%;
+}

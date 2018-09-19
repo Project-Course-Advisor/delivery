@@ -1,4 +1,7 @@
-
+<div class='banner'>
+  <img class='img-banner' src='/backend/images/banner_image.jpg' alt='The Image for banner'>
+</div>
+<mat-grid-list cols="2" rowHeight="2:1">
  <mat-accordion class="custom-panel" multi='true' *ngIf='courses.length > 0 && !isLoading'>
     <mat-card class="card-style" *ngFor='let course of courses'>
         <mat-card-header class="card-title-style">
@@ -22,5 +25,6 @@
     </mat-action-row>
    </mat-expansion-panel> -->
  </mat-accordion>
+</mat-grid-list>
  <mat-spinner *ngIf='isLoading' ></mat-spinner>
 <p class='item-style mat-body-1' *ngIf='courses.length <= 0 && !isLoading'>No Course Programs to show.</p>
