@@ -1,6 +1,7 @@
 const express = require('express');
 
 const router = express.Router();
+const checkAuth = express('../middleware/check-auth.js');
 
 const Course = require('../models/course');
 
@@ -34,9 +35,11 @@ router.post("/api/sub_courses", (req, res, next) => {
   });
 });
 
-router.get('/api/courses',(req, res, next) => {
+router.get('/api/courses', checkAuth, (req, res, next) => {
+  //console.log(checkAuth);
   Course.find()
   .then(documents => {
+   // console.log(checkAuth);
     console.log(documents);
     res.status(200).json({
       message: "Posts fetched successfully!",
@@ -84,7 +87,7 @@ router.delete("/api/courses/:id", (req, res, next) => {
   });
 });
 
-router.get("/api/courses/:id", (req, res, next) => {
+router.get("/api/courses/:id", checkAuth, (req, res, next) => {
   Course.findById(req.params.id).then(post => {
     if (course) {
       res.status(200).json(course);

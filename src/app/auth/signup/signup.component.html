@@ -10,7 +10,7 @@
       <input matInput name='lastname' ngModel type='text' placeholder="Last Name" #emailInput='ngModel' required >
   </mat-form-field>
   <mat-form-field>
-        <input matInput name='dob' ngModel type='date' placeholder="Date of Birth" #emailInput='ngModel' required >
+        <input matInput name='dateofbirth' ngModel type='date' placeholder="Date of Birth" #emailInput='ngModel' required >
   </mat-form-field>
   <mat-form-field>
         <input matInput name='university' ngModel type='text' placeholder="University" #emailInput='ngModel' required >
@@ -20,7 +20,7 @@
     <mat-error *ngIf='emailInput.invalid'>Please enter a valid email address</mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input type='password' name='password' ngModel matInput placeholder="Password" #passwordInput='ngModel' required >
+      <input type='password' name='password' ngModel matInput placeholder="Preferred Password" #passwordInput='ngModel' required >
       <mat-error *ngIf='passwordInput.invalid'>Please enter a valid password</mat-error>
     </mat-form-field>
     <button mat-raised-button color="accent" type='Submit'>Sign Up</button>
