@@ -3,20 +3,24 @@
   <span class='spacer'>
   </span>
   <ul class='ca-nav'>
-    <li>
+    <li *ngIf='!userIsAuthenticated'>
       <a mat-button routerLink='' routerLinkActive=''>Programs</a>
     </li>
-    <li>
+    <li *ngIf='userIsAuthenticated'>
         <a mat-button  routerLink=''routerLinkActive=''>Student Forum</a>
     </li>
-    <li>
+    <li *ngIf='!userIsAuthenticated'>
       <a mat-button  routerLink='' routerLinkActive=''>News</a>
     </li>
-    <li>
+    <li *ngIf='!userIsAuthenticated'>
       <a  mat-button routerLink='' routerLinkActive=''>ContactUs</a>
     </li>
-    <li>
-      <a mat-button routerLink='/login' routerLinkActive=''>Login</a>
+    <li *ngIf='!userIsAuthenticated'>
+      <a mat-button routerLink='/login' routerLinkActive=''><mat-icon class="icon-size">input</mat-icon>
+        Login</a>
+    </li>
+    <li *ngIf='userIsAuthenticated'>
+      <button mat-button (click)="onLogout()">Logout</button>
     </li>
   </ul>
 </mat-toolbar>

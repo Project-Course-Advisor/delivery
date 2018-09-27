@@ -19,22 +19,6 @@ router.post("/api/courses", (req, res, next) => {
   });
 });
 
-router.post("/api/sub_courses", (req, res, next) => {
-  const sub_course = new Subcourse({
-    title: req.body.title,
-    content: req.body.content,
-    uni: req.body.uni,
-    course_id: req.body.course_id
-  });
- sub_course.save().then(result => {
-  console.log(sub_course);
-  res.status(201).json({
-    message: 'Post added sucessfully',
-    // subcourseId: createdCourse._id
-   });
-  });
-});
-
 router.get('/api/courses', checkAuth, (req, res, next) => {
   //console.log(checkAuth);
   Course.find()
@@ -66,16 +50,6 @@ router.get('/api/courses', checkAuth, (req, res, next) => {
 
 });
 
-router.get('/api/subcourses',(req, res, next) => {
-  Subcourse.find()
-  .then(documents => {
-    console.log(documents);
-    res.status(200).json({
-      message: "Posts fetched successfully!",
-      subcourses: documents
-    });
-  });
-});
 
 router.delete("/api/courses/:id", (req, res, next) => {
   console.log(req.params.id);
@@ -105,7 +79,7 @@ const course = new Course({
 });
   Course.updateOne({_id: req.param.id }, course).then (result => {
     console.log(result);
-    res.status(200).json({message: 'Uodate successful!'});
+    res.status(200).json({message: 'Update successful!'});
   })
 });
 

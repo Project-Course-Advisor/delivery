@@ -16,3 +16,8 @@ a{
 .ca-nav > li {
   display: inline-block;
 }
+
+.icon-size {
+  margin-top: 2px;
+  font-size: 1rem;
+}

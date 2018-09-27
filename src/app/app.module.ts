@@ -9,7 +9,9 @@ import { MatInputModule,
    MatExpansionModule,
    MatProgressSpinnerModule,
    MatGridListModule,
-   MatDividerModule} from '@angular/material';
+   MatSnackBarModule,
+   MatDividerModule,
+   MatIconModule} from '@angular/material';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -37,10 +39,12 @@ import { AuthInterceptor } from './auth/auth-interceptor';
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatIconModule,
     MatDividerModule,
     MatInputModule,
     MatGridListModule,
     MatCardModule,
+    MatSnackBarModule,
     MatButtonModule,
     MatToolbarModule,
     MatProgressSpinnerModule,
