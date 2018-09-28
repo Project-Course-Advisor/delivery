@@ -1,19 +1,21 @@
 <div class='banner'>
   <img class='img-banner' src='/backend/images/banner_image.jpg' alt='The Image for banner'>
 </div>
-<mat-grid-list cols="2" rowHeight="2:1">
- <mat-accordion class="custom-panel" multi='true' *ngIf='courses.length > 0 && !isLoading'>
-    <mat-card class="card-style" *ngFor='let course of courses'>
-        <mat-card-header class="card-title-style">
-            <mat-card-title ><h3>  {{ course.title }} </h3></mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            {{ course.content }}
-        </mat-card-content>
-        <mat-card-actions class="card-actions-style">
-            <a mat-button color="primary" [routerLink]="['/explore', course.id]">Explore</a>
-        </mat-card-actions>
-    </mat-card>
+<mat-accordion class="custom-panel" multi='true' *ngIf='courses.length > 0 && !isLoading'>
+<mat-grid-list role="list" cols="3" rowHeight="2:1">
+  <mat-grid-tile role="listitem" *ngFor='let course of courses'>
+      <mat-card class="card-style" >
+          <mat-card-header class="card-title-style">
+              <mat-card-title ><h3>  {{ course.title }} </h3></mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+              {{ course.content }}
+          </mat-card-content>
+          <mat-card-actions class="card-actions-style">
+              <a mat-stroked-button class='go-right' color="primary" [routerLink]="['/explore', course.id]">Explore</a>
+          </mat-card-actions>
+      </mat-card>
+  </mat-grid-tile>
    <!-- <mat-expansion-panel *ngFor='let course of courses'>
    <mat-expansion-panel-header>
       {{ course.title }}
@@ -24,7 +26,7 @@
       <button mat-button color="warn" (click)="onDelete(course.id)">Delete</button>
     </mat-action-row>
    </mat-expansion-panel> -->
- </mat-accordion>
 </mat-grid-list>
+</mat-accordion>
  <mat-spinner *ngIf='isLoading' ></mat-spinner>
 <p class='item-style mat-body-1' *ngIf='courses.length <= 0 && !isLoading'>No Course Programs to show.</p>

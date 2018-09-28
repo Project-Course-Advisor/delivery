@@ -30,6 +30,7 @@ export class CourseProgramLevel implements OnInit, OnDestroy {
         this.isLoading = false;
         this.courses = courses;
     });
+    console.log(this.courses);
   }
 
   onDelete(courseId: string) {

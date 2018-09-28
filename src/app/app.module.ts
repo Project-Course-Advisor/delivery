@@ -10,12 +10,15 @@ import { MatInputModule,
    MatProgressSpinnerModule,
    MatGridListModule,
    MatSnackBarModule,
+   MatPaginatorModule,
    MatDividerModule,
    MatIconModule} from '@angular/material';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CourseCreateComponent } from './courses/course-details/course-details.component';
+import { PostCreateComponent } from './courses/post-create/post-create.component';
+import { PostListComponent } from './courses/post-list/post-list.component';
 import {HeaderComponent } from './header/header.component';
 import { CourseProgramLevel } from './courses/course-program-level/course-program-level.component';
 import { AppRoutingModule } from './app.routing.module';
@@ -28,6 +31,8 @@ import { AuthInterceptor } from './auth/auth-interceptor';
   declarations: [
     AppComponent,
     CourseCreateComponent,
+    PostCreateComponent,
+    PostListComponent,
     HeaderComponent,
     CourseProgramLevel,
     LoginComponent,
@@ -46,6 +51,7 @@ import { AuthInterceptor } from './auth/auth-interceptor';
     MatCardModule,
     MatSnackBarModule,
     MatButtonModule,
+    MatPaginatorModule,
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatExpansionModule,

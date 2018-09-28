@@ -8,7 +8,7 @@
 }
 
 .card-style{
-  width: 30%;
+  width: 80%;
   margin: 1rem;
 }
 
@@ -32,4 +32,8 @@ mat-spinner{
 {
   height: 100%;
   width: 100%;
+}
+
+.go-right {
+  float: right;
 }

@@ -8,15 +8,16 @@
   </mat-form-field>
   <button mat-raised-button color="primary" (click)="onClickCourse()">Search</button> -->
 </mat-card>
-<mat-card class="card-style" *ngFor='let subcourse of subcourses'>
-  <mat-card-header class="card-title-style">
-      <mat-card-title ><h3>  {{ course.title }} </h3></mat-card-title>
+<mat-card class="card-style" *ngFor='let subcourses of subcourse'>
+  <mat-card-header>
+      <mat-card-title ><h4>  {{ subcourses.title }} </h4></mat-card-title>
   </mat-card-header>
   <mat-card-content>
-      {{ course.content }}
+      <p><strong>Description:</strong> {{ subcourses.content }} </p>
+      <p><strong>Offered By:</strong> {{ subcourses.uni }} </p>
   </mat-card-content>
   <mat-card-actions class="card-actions-style">
-      <a mat-button color="primary" [routerLink]="['/explore', course.id]">Explore</a>
+      <a mat-button color="primary" [routerLink]="['/explore', subcourses.id]">Explore</a>
   </mat-card-actions>
 </mat-card>
 

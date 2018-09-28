@@ -11,7 +11,7 @@ router.post("/api/courses", (req, res, next) => {
     content: req.body.content
   });
  course.save().then(result => {
-  console.log(course);
+ // console.log(course);
   res.status(201).json({
     message: 'Post added sucessfully',
     courseId: createdCourse._id

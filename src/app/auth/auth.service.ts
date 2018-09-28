@@ -46,7 +46,7 @@ export class AuthService {
         const expiresInDuration = response.expiresIn;
         this.tokenTimer = setTimeout(() => {
           this.logout();
-        }, expiresInDuration);
+        }, expiresInDuration * 1000);
       this.authStatusListener.next(true);
       this.router.navigate(['/']);
       this.loginValidationBar.open('Hello. Welcome back', 'Cool', {

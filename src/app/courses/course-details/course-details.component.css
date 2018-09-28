@@ -15,7 +15,23 @@ h2 {
 h3 {
   margin: 3rem 3rem 3rem 3rem;
 }
+
+h4 {
+  color: darkcyan;
+  text-align-last: center;
+}
+
+mat-card-header {
+  justify-content: center;
+}
+
 mat-spinner
 {
   margin: auto;
+}
+
+
+.card-style{
+  width: 30%;
+  margin: 1rem;
 }

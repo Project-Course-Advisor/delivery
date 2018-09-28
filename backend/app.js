@@ -1,10 +1,12 @@
 const express = require('express');
+const path = require('path');
 const bodyparser = require("body-parser");
 const mongoose = require('mongoose');
 
 const coursesRoutes = require('./routes/courses');
 const userRoutes = require('./routes/user')
 const subcourseRoutes = require('./routes/subcourse');
+const postsRoutes = require('./routes/posts');
 
 const app = express();
 
@@ -16,9 +18,11 @@ mongoose.connect("mongodb://deakincourseadvisor:deakincourse@cluster0-shard-00-0
   console.log('Connection failed')
 });
 
+app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({
   extended: true
 }));
+app.use('/images', express.static(path.join('backend/images')));
 
 //app.use(bodyparser.urlencoded({extended: false}));
 
@@ -33,6 +37,8 @@ app.use(coursesRoutes);
 
 app.use('/api/user', userRoutes);
 
-app.use('/api/', subcourseRoutes);
+app.use('/sub/', subcourseRoutes);
+
+app.use('/student/', postsRoutes);
 
 module.exports = app;
