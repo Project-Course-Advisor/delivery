@@ -27,7 +27,8 @@ export class PostsService {
                 title: post.title,
                 content: post.content,
                 id: post._id,
-                imagePath: post.imagePath
+                imagePath: post.imagePath,
+                author: post.author
               };
             }),
             maxPosts: postData.maxPosts
@@ -53,6 +54,7 @@ export class PostsService {
       title: string;
       content: string;
       imagePath: string;
+      author: string;
     }>('http://localhost:3000/student/posts/' + id);
   }
 
@@ -85,7 +87,8 @@ export class PostsService {
         id: id,
         title: title,
         content: content,
-        imagePath: image
+        imagePath: image,
+        author: null
       };
     }
     this.http
@@ -96,6 +99,7 @@ export class PostsService {
   }
 
   deletePost(postId: string) {
+    console.log('Delete Testing');
     return this.http
       .delete('http://localhost:3000/student/posts/' + postId);
   }

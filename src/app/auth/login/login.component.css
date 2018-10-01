@@ -4,11 +4,11 @@
 }
 
 mat-card {
-  width: 40%;
+  width: 30%;
   text-align: center;
 }
 
 mat-form-field {
-  width: 60%;
+  width: 80%;
   display: block;
 }
